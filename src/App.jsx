@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import Country from './country'
-import Search from './search'
+import Country from './Country'
+import Search from './Search'
 
 function App() {
 	const [countries, setCountries] = useState([])
