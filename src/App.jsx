@@ -3,10 +3,12 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 import Country from './Country'
 import Search from './Search'
+import Filter from './Filter'
 
 function App() {
 	const [countries, setCountries] = useState([])
 	const [currName, setCurrName] = useState('')
+	const [currRegion, setCurrRegion] = useState('')
 	useEffect(() => {
 		getCountries()
 	}, [])
@@ -27,6 +29,12 @@ function App() {
 	const search = value => {
 		console.log(value)
 		setCurrName(value)
+		setCurrRegion('')
+	}
+
+	const getRegion = region => {
+		setCurrRegion(region)
+		setCurrName('')
 	}
 	return (
 		<div className='home'>
@@ -35,18 +43,23 @@ function App() {
 			</div>
 			<div className='nav-bar'>
 				<Search submit={search} />
+				<Filter filter={getRegion} />
 			</div>
 			<div className='countries-grid'>
-				{!currName
+				{!currName && !currRegion
 					? bigCountries.map(country => {
 							return <Country country={country} />
 					  })
-					: countries
+					: !currRegion
+					? countries
 							.filter(country =>
 								country.name.common
 									.toLowerCase()
 									.includes(currName.toLowerCase())
 							)
+							.map(country => <Country country={country} />)
+					: countries
+							.filter(country => country.region === currRegion)
 							.map(country => <Country country={country} />)}
 			</div>
 		</div>
