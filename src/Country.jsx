@@ -9,7 +9,7 @@ export default function Country({ country }) {
 				<h1>{country.name.common}</h1>
 				<p>
 					<span>population:</span>
-					{country.population}
+					{country.population.toLocaleString('en-US')}
 				</p>
 				<p>
 					<span>region:</span>
