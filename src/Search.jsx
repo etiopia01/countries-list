@@ -3,5 +3,11 @@ export default function Search({ submit }) {
 		submit(e.target.value)
 	}
 
-	return <input type='text' onChange={handleChange} />
+	return (
+		<input
+			type='text'
+			onChange={handleChange}
+			placeholder='Search for a country'
+		/>
+	)
 }

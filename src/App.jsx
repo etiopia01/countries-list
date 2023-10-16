@@ -30,7 +30,9 @@ function App() {
 	}
 	return (
 		<div className='home'>
-			<div className='header'></div>
+			<div className='header'>
+				<h1>Where in the world?</h1>
+			</div>
 			<div className='nav-bar'>
 				<Search submit={search} />
 			</div>
