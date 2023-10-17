@@ -11,6 +11,7 @@ export default function Filter({ filter }) {
 					<button onClick={() => filter('Asia')}>Asia</button>
 					<button onClick={() => filter('Europe')}>Europe</button>
 					<button onClick={() => filter('Oceania')}>Oceania</button>
+					<button onClick={() => filter('Antarctic')}>Antartica</button>
 				</div>
 			</Popover.Panel>
 		</Popover>
