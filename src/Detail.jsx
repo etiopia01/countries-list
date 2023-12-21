@@ -31,7 +31,7 @@ export default function Detail() {
 	useEffect(() => {
 		getCountry()
 	}, [])
-	console.log(country)
+	
 	return !isLoading && country ? (
 		<div className='home-detail'>
 			<div className='header'>

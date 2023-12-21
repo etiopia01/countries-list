@@ -38,10 +38,7 @@ function App() {
 		setCurrRegion('')
 	}
 
-	/* const getRegion = region => {
-		setCurrRegion(region)
-		setCurrName('')
-	} */
+	
 
 	const getRegion = useCallback(region => {
 		setCurrRegion(region)
